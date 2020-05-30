@@ -9,6 +9,8 @@ jobs:
     - uses: actions/checkout@v1
     - name: Set up Python
       uses: actions/setup-python@v1
+    - name: Install dependencies
+      run: python -m pip install --upgrade pip setuptools wheel pandas seaborn matplotlib scipy numpy
     - uses: yaananth/run-notebook@v1
       env:
         RUNNER: ${{ toJson(runner) }}
@@ -17,7 +19,7 @@ jobs:
       with:
         notebook: "Local\ Authority\ Covid-19\ Cases.ipynb"
         params: "params.json"
-        isReport: False
+        isReport: True
         poll: True
     - uses: actions/upload-artifact@master
       if: always()
