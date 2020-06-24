@@ -24,7 +24,7 @@ jobs:
     - uses: actions/upload-artifact@master
       if: always()
       with:
-        name: output
+        name: output.html
         path: ${{ RUNNER.temp }}/nb-runner
       env:
         RUNNER: ${{ toJson(runner) }}
