@@ -3,6 +3,5 @@ jupyter_contrib_nbextensions
 matplotlib
 numpy
 pandas
-scipy
 time
 warnings
